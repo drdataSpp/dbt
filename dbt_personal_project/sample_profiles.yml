@@ -1,0 +1,13 @@
+dbt_personal_project:
+  outputs:
+    dev:
+      account: "{{env_var('sf_account')}}"
+      database: TEST_DB
+      warehouse: COMPUTE_WH
+      user: DBT_USER
+      role: DBT_ROLE
+      schema: DBT
+      threads: 16
+      type: snowflake
+      private_key_path: "{{env_var('private_key_path')}}"
+  target: dev
