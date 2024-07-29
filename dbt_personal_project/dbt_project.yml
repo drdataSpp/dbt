@@ -34,3 +34,26 @@ models:
     # Config indicated by + and applies to all files under models/example/
     example:
       +materialized: view
+
+on-run-start: 
+  - "DELETE FROM TEST_DB.DBT_LOGS.DBT_REDACTED_QUERIES
+     WHERE START_TS < DATEADD(day, -7, CURRENT_TIMESTAMP()::TIMESTAMP_LTZ);"
+
+on-run-end:
+  - "INSERT INTO TEST_DB.DBT_LOGS.DBT_REDACTED_QUERIES
+    SELECT QUERY_ID 
+        ,USER_NAME
+        ,START_TIME
+        ,END_TIME
+        ,QUERY_TEXT
+        ,ERROR_CODE
+        ,ERROR_MESSAGE
+    FROM SNOWFLAKE.ACCOUNT_USAGE.QUERY_HISTORY
+    WHERE USER_NAME = CURRENT_USER()
+        AND EXECUTION_STATUS = 'FAIL'
+        AND QUERY_ID NOT IN (
+          SELECT QUERY_ID
+          FROM TEST_DB.DBT_LOGS.DBT_REDACTED_QUERIES
+          WHERE USER_NAME = CURRENT_USER()
+        )
+    ;"

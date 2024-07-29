@@ -1,0 +1,1 @@
+Link to download OpenSSL to generate keys for the SF SA: https://slproweb.com/products/Win32OpenSSL.html
