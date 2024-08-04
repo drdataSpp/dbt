@@ -14,15 +14,15 @@ The project is structured as follows:
   - **Dimensions**: Creation of dimension tables representing business entities such as customers, products, and time.
   - **Facts**: Creation of fact tables containing transactional data such as sales.
 
-<img src="https://github.com/drdataSpp/data_projects/blob/master/dbt_projects/dbt_docs/DBT_docs.png" width="250%" height="200%">
+<img src="https://github.com/drdataSpp/dbt/blob/main/dbt_projects_snowflake/dbt_docs/DBT_docs.png" width="250%" height="200%">
 
 ## Data Lineage Diagram
 
-<img src="https://github.com/drdataSpp/data_projects/blob/master/dbt_projects/dbt_docs/SALES_data_lineage.png" width="250%" height="200%">
+<img src="https://github.com/drdataSpp/dbt/blob/main/dbt_projects_snowflake/dbt_docs/SALES_data_lineage.png" width="250%" height="200%">
 
 ## Sample Analysis Query
 
-<img src="https://github.com/drdataSpp/data_projects/blob/master/dbt_projects/dbt_docs/Sample_Analysis_Query.png" width="250%" height="200%">
+<img src="https://github.com/drdataSpp/dbt/blob/main/dbt_projects_snowflake/dbt_docs/Sample_Analysis_Query.png" width="250%" height="200%">
 
 ## Key Components of this Project
 
